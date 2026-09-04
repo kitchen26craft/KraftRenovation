@@ -277,51 +277,21 @@ form.addEventListener("submit", async function(event) {
         const formData =
             new FormData(form);
 
-        const formspreeResponse =
-            await fetch(
-                form.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        Accept: "application/json"
-                    }
-                }
-            );
-
-
-        let formspreeResult;
-
-        try {
-            formspreeResult =
-                await formspreeResponse.json();
-        } catch (error) {
-            formspreeResult = {};
-        }
-
-
-        if (!formspreeResponse.ok) {
-            let errorMessage =
-                "Form submission failed.";
-
-            if (
-                formspreeResult &&
-                formspreeResult.errors &&
-                formspreeResult.errors.length > 0
-            ) {
-                errorMessage =
-                    formspreeResult.errors
-                    .map(
-                        (error) =>
-                        error.message
-                    )
-                    .join(", ");
+        const web3Response = await fetch(
+            "https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
             }
+        );
 
+        const web3Result = await web3Response.json();
+
+        if (!web3Response.ok || !web3Result.success) {
             throw new Error(
-                errorMessage
+                web3Result.message ||
+                "Form submission failed."
             );
         }
-
 
         // SUCCESS
 
