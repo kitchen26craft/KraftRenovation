@@ -1624,3 +1624,20 @@ img {
         font-size: 40px;
     }
 }
+
+
+/* ========================================
+   TWO PROJECT LAYOUT
+======================================== */
+
+.projects-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 900px;
+}
+
+@media (max-width: 768px) {
+    .projects-grid-two {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+}
