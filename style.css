@@ -1650,11 +1650,12 @@ img {
 .social-links {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 18px;
     margin-top: 18px;
 }
 
 .social-links a {
+    font-size: 22px;
     width: 40px;
     height: 40px;
     display: flex;
