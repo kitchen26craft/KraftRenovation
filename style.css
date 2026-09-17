@@ -1641,3 +1641,35 @@ img {
         max-width: 100%;
     }
 }
+
+
+/* ========================================
+   SOCIAL MEDIA LINKS
+======================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b77a21;
+    border-radius: 50%;
+    color: #b77a21;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #b77a21;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
